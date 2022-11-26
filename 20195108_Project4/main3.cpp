@@ -1,0 +1,40 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+class Person {
+	string name;
+	int birthYear;
+
+public:
+	Person(string name, int year) {
+		this->name = name;
+		this->birthYear = year;
+	}
+	void print() {
+		cout << "성명: " << name << endl;
+		cout << "출생연도: " << birthYear << endl;
+	}
+
+
+};
+class Student :public Person {
+	string university;
+public:
+	Student(string name, int year, string unversity) :Person(name, year) {
+		this->university = unversity;
+	}
+	void print() {
+		Person::print();
+		cout << "대학교: " << university << endl;
+	}
+
+
+};
+
+int main() {
+	Student s("홍길동", 1997, "한국대학교");
+	s.print();
+	return 0;
+
+}
